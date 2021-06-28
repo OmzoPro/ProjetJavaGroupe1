@@ -20,9 +20,9 @@ public class IdaoVirement {
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from operation where numCompte = ? and compteDestinataire = ?")) {
+						.prepareStatement("select * from compte where numCompte = ? ")) {
 			preparedStatement.setString(1, virement.getNumCompte());
-			preparedStatement.setString(2, virement.getCompteDestinataire());
+			
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
 			status =rs.next();

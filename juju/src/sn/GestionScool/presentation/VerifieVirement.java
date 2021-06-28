@@ -36,7 +36,7 @@ public class VerifieVirement extends HttpServlet {
 		
 		Operation loginBean = new Operation();
 		loginBean.setNumCompte(username);
-		loginBean.setCompteDestinataire(password);
+		loginBean.setNumCompte(password);
 		/////////debut
 		
 		

@@ -20,8 +20,9 @@ public class LoginDao {
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select * from operation where numCompte = ?")) {
+						.prepareStatement("select * from compte where numCompte = ? and numCompte = ? ")) {
 			preparedStatement.setString(1, loginBean.getNumCompte());
+			preparedStatement.setString(2, loginBean.getNumCompte());
 			
 
 			System.out.println(preparedStatement);
