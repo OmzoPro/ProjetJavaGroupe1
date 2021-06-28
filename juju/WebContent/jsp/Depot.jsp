@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C"%>
@@ -44,6 +45,10 @@
 <body>
 <div class="container">
 
+
+	
+
+
 <section class="open-account-area ptb-100">
     <div class="container">
         <div class="section-title">
@@ -51,74 +56,59 @@
         </div>
         <div class="open-account-form">
             <form action="<%=request.getContextPath()%>/Depot" method="post">
-                <div class="row">
+            
+               <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="form-group">
                             <label class="">Numéro de Compte du client</label>
-                            <input type="text"  name="compte1" value=" " class="form-control">
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group">
-                            <label class="">Numéro de Compte du beneficiare</label>
-                            <input type="text" name="compte2" value=" " class="form-control">
-                            
+                            <input type="text" disabled="" value="62828989624810 " class="form-control">
+                            <input type="hidden" name="num_compte" value="62828989624810 " class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <label>date operation</label>
-                            <input type="text" name="dateO" value="${t.nom}" class="form-control">
+                            <label>Prénom du client</label>
+                            <input type="text" disabled="" value="pape " class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <label>solde aprest</label>
-                            <input type="text" name="soldeP" value="modou" class="form-control">
+                            <label>Nom du client</label>
+                            <input type="text" disabled="" value="fall " class="form-control">
                         </div>
                     </div>
                      <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <label>Type d'Operation</label>
-                            <input type="text" name="toperation" value=" " class="form-control">
+                            <label>Type de compte du client</label>
+                            <input type="text"  disabled="" name="typeCompte" value="Epargne " class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <label>Solde du compte</label>
-                            <input type="text" name="solde" value="" class="form-control">
+                            <input type="text" disabled="" value="447" class="form-control">
                         </div>
                     </div>
-                    
-                        <div class="col-lg-12 col-md-12">
+                                            <div class="col-lg-12 col-md-12">
                         <div class="form-group">
                             <label>Montant à deposer</label>
-                            <input type="text" name="montantOperation" class="form-control" placeholder="Montant">
-                        </div>
-                        </div>
-                       
-                        <div class="col-lg-12 col-md-12">
-                        <div class="form-group">
-                            <label>idAgent</label>
-                            <input type="text" name="idAgent" class="form-control" placeholder="Montant">
+                            <input type="number" name="montantOperation" class="form-control" placeholder="Montant">
+                            <input type="hidden" name="toperation" value="depot" class="form-control">
+                            <input type="hidden" name="idAgent" value="4" class="form-control">
+                            <input type="hidden" name="dateO" value="28/06/2021" class="form-control">
+                            <input type="hidden" name="soldeApres" value="28/06/2021" class="form-control">
+                            <input type="hidden" name="soldeAvant" value="5000" class="form-control">
                             
                         </div>
                         </div>
                         
-                        
-
                     <div class="col-lg-12">
                         <div class="banner-form-btn">
-                           
-                            <button type="submit" name="depot_retrait" class="default-btn">
+                                                        <button type="submit" name="depot_retrait" class="default-btn">
                                 Envoyer
                             </button>
-                            
-                            
-                        </div>
+                                                    </div>
                     </div>
-                    
                 </div>
             </form>
        </div>

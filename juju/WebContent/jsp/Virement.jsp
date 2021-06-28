@@ -50,75 +50,84 @@
             <h2>Virement argent</h2>
         </div>
         <div class="open-account-form">
-            <form action="<%=request.getContextPath()%>/Depot" method="post">
+            <form action="<%=request.getContextPath()%>/Virement" method="post">
+                
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="form-group">
-                            <label class="">Numéro de Compte du client</label>
-                            <input type="text"  name="compte1" value=" " class="form-control">
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-group">
-                            <label class="">Numéro de Compte du beneficiare</label>
-                            <input type="text" name="compte2" value=" " class="form-control">
-                            
+                            <label class="">Numéro de Compte du client</label> 
+                            <input type="text" disabled=""   name="num_compte" value="100120021239948 " class="form-control">
+                            <input type="hidden" name="num_compte" value="100120021239948 " class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <label>date operation</label>
-                            <input type="text" name="dateO" value="${t.nom}" class="form-control">
+                            <label>Prénom du client</label>
+                            <input type="text" disabled="" value="fatima " class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <label>solde aprest</label>
-                            <input type="text" name="soldeP" value="modou" class="form-control">
+                            <label>Nom du client</label>
+                            <input type="text" disabled="" value="kane " class="form-control">
                         </div>
                     </div>
                      <div class="col-lg-6 col-md-6">
                         <div class="form-group">
-                            <label>Type d'Operation</label>
-                            <input type="text" name="toperation" value=" " class="form-control">
+                            <label>Type de compte du client</label>
+                            <input type="text" disabled="" value="Epargne " class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <label>Solde du compte</label>
-                            <input type="text" name="solde" value="" class="form-control">
+                            <input type="text"   name="soldeAvant"  value="45000" class="form-control">
                         </div>
                     </div>
-                    
-                        <div class="col-lg-12 col-md-12">
-                        <div class="form-group">
-                            <label>Montant à deposer</label>
-                            <input type="text" name="montantOperation" class="form-control" placeholder="Montant">
+                                            <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <label><center><h1>Coordonnées du destinataire</h1></center></label>
+                            </div>
                         </div>
-                        </div>
-                       
-                        <div class="col-lg-12 col-md-12">
-                        <div class="form-group">
-                            <label>idAgent</label>
-                            <input type="text" name="idAgent" class="form-control" placeholder="Montant">
-                            
-                        </div>
-                        </div>
-                        
-                        
 
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <label>Numero de Compte du destinataire</label>
+                               
+                                <input type="text" name="compteDestinataire" value="14789632" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Prénom du client destinataire</label>
+                                <input type="text"  value="  " class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="form-group">
+                                <label>Nom du client destinataire</label>
+                                <input type="text"  value=" " class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <label>Montant du virement</label>
+                                <input type="number" name="montantOperation" class="form-control" placeholder="Montant">
+                                <input type="hidden" name="toperation" value="virement" class="form-control">
+                            </div>
+                        </div>
+                        
                     <div class="col-lg-12">
                         <div class="banner-form-btn">
-                           
-                            <button type="submit" name="depot_retrait" class="default-btn">
+                           <input type="hidden" name="soldeApres" value=" 159000" class="form-control">
+                           <input type="hidden" name="dateO" value="15/12/2021 " class="form-control">
+                           <input type="hidden" name="idAgent" value=" 5" class="form-control">
+                           <input type="hidden" name="" value="15/12/2021 " class="form-control">
+                            <button type="submit" name="virement" class="default-btn">
                                 Envoyer
                             </button>
-                            
-                            
-                        </div>
+                                                    </div>
                     </div>
-                    
                 </div>
             </form>
        </div>

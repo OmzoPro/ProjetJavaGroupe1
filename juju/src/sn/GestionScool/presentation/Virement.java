@@ -44,18 +44,18 @@ public class Virement extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		
-		String client1 = request.getParameter("compte1");
-		String client2 = request.getParameter("compte2");
-		String client3 = request.getParameter("dateO");
-		String client4 = request.getParameter("soldeP");
-		String client5 = request.getParameter("toperation");
-		String client6 = request.getParameter("solde");
-		String client7 = request.getParameter("montantOperation");
-		String client8 = request.getParameter("idAgent");
+		String num_compte = request.getParameter("num_compte");
+		String dateO = request.getParameter("dateO");
+		String soldeApres = request.getParameter("soldeApres");
+		String toperation = request.getParameter("toperation");
+		String soldeAvant = request.getParameter("soldeAvant");
+		String montantOperation = request.getParameter("montantOperation");
+		String idAgent = request.getParameter("idAgent");
+		String compteDestinataire = request.getParameter("compteDestinataire");
 		
-		Operation depot = new Operation(null, client1, client5, client7, client6, client4, client2, client3, client8);
+		Operation virement = new Operation(null, num_compte, toperation, montantOperation, soldeAvant, soldeApres, compteDestinataire, dateO, idAgent);
 		IdaoOperation dao = new IdaoOperationImp();
-		dao.save(depot);
+		dao.save(virement);
 		request.getRequestDispatcher("jsp/recueVirement.jsp").forward(request, response);
 		
 		

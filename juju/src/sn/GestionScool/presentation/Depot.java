@@ -1,7 +1,7 @@
 package sn.GestionScool.presentation;
 
 import java.io.IOException;
-
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import javafx.util.converter.LocalDateTimeStringConverter;
 import sn.GestionScool.dao.IdaoOperation;
 import sn.GestionScool.dao.IdaoOperationImp;
 import sn.GestionScool.domaine.Operation;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 /**
  * Servlet implementation class Depot
@@ -43,19 +46,23 @@ public class Depot extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+	
+		String num_compte = request.getParameter("num_compte");
+		String dateO = request.getParameter("dateO");
+		String soldeApres = request.getParameter("soldeApres");
+		String toperation = request.getParameter("toperation");
+		String soldeAvant = request.getParameter("soldeAvant");
+		String montantOperation = request.getParameter("montantOperation");
+		String idAgent = request.getParameter("idAgent");
 		
-		String client1 = request.getParameter("compte1");
-		String client2 = request.getParameter("compte2");
-		String client3 = request.getParameter("dateO");
-		String client4 = request.getParameter("soldeP");
-		String client5 = request.getParameter("toperation");
-		String client6 = request.getParameter("solde");
-		String client7 = request.getParameter("montantOperation");
-		String client8 = request.getParameter("idAgent");
-		
-		Operation depot = new Operation(null, client1, client5, client7, client6, client4, client2, client3, client8);
+		Operation depot = new Operation(null, num_compte, toperation, montantOperation, soldeAvant, soldeApres, null, dateO, idAgent);
 		IdaoOperation dao = new IdaoOperationImp();
 		dao.save(depot);
+		//recuparation de la liste des operations
+		ArrayList<Operation> listeOperation;
+		listeOperation=dao.liste();
+		request.setAttribute("operations", listeOperation);
+		
 		request.getRequestDispatcher("jsp/recueDepot.jsp").forward(request, response);
 		
 		
