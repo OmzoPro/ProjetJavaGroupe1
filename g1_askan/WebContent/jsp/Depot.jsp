@@ -1,4 +1,4 @@
-<%@page import="sn.g1_bank.domaine.Compte"%>
+
 <%@include file="../view/header.jsp"%>
 <%@include file="../view/menue.jsp"%>
 <%@include file="../view/nav.jsp"%>
@@ -24,13 +24,13 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <label>Prénom du client</label>
-                            <input type="text" disabled="" value="pape " class="form-control">
+                            <input type="text" disabled=""   value="<c:out value='${cli1.prenom}' />"  class="form-control">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
                             <label>Nom du client</label>
-                            <input type="text" disabled="" value="fall " class="form-control">
+                            <input type="text" disabled="" value="<c:out value='${cli1.idAgent}' />" class="form-control">
                         </div>
                     </div>
                      <div class="col-lg-6 col-md-6">
@@ -50,9 +50,9 @@
                             <label>Montant à deposer</label>
                             <input type="number" name="montantOperation" class="form-control" placeholder="Montant">
                             <input type="hidden" name="toperation" value="depot" class="form-control">
-                            <input type="hidden" name="idAgent" value="5" class="form-control">
+                            <input type="hidden" name="idAgent" value="4" class="form-control">
                             <input type="hidden" name="dateO" value="28/06/2021" class="form-control">
-                            <input type="hidden" name="soldeAvant" value="5" class="form-control">
+                            <input type="hidden" name="soldeAvant" value="<c:out value='${cpt1.solde}' />" class="form-control">
                             
                             
                             
