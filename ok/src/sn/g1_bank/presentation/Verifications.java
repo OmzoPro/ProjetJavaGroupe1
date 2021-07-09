@@ -22,10 +22,10 @@ import sn.g1_bank.domaine.Compte;
 @WebServlet("/")
 public class Verifications extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private IdaoCompteImp c;
+	private IdaoCompteImp daoC;
 
 	public void init() {
-		c = new IdaoCompteImp();
+		daoC = new IdaoCompteImp();
 	}
 	
 
@@ -35,8 +35,11 @@ public class Verifications extends HttpServlet {
 
 		String username = request.getParameter("username");
 		
+		
+		
+		
 		Compte compte = new Compte();
-		IdaoCompte dao1 =new IdaoCompteImp();
+		
 		compte.setNumCompte(username);
 		/////////debut
 		
@@ -44,13 +47,13 @@ public class Verifications extends HttpServlet {
 		
 
 		try {
-			if (c.Verifie(compte)) {
-				ArrayList<Compte>listComptes;
-				listComptes=dao1.liste();
-				request.setAttribute("comptes", listComptes);
+			boolean verification = daoC.Verifie(username);
+			if (verification) {
 				HttpSession session1 = request.getSession();
-				 session1.setAttribute("sessionDepot",compte);
-				response.sendRedirect("jsp/Depot.jsp");
+				 String numCompte=compte.getNumCompte(); 
+				 Compte infosCompte=daoC.donnees(numCompte);
+				 session1.setAttribute("cpt1", infosCompte);
+				request.getRequestDispatcher("jsp/Depot.jsp").forward(request, response);
 			} else {
 				
 				response.sendRedirect("jsp/verifieDepot.jsp");
@@ -64,10 +67,13 @@ public class Verifications extends HttpServlet {
 		
 		if (path.equals("/verifieRetrait")) {
 			try {
-				if (c.Verifie(compte)) {
+				boolean verification = daoC.Verifie(username);
+				if (verification) {
 					HttpSession session2 = request.getSession();
-					 session2.setAttribute("sessionRetrait",compte);
-					response.sendRedirect("jsp/Retrait.jsp");
+					 String numCompte=compte.getNumCompte(); 
+					 Compte infosCompte=daoC.donnees(numCompte);
+					 session2.setAttribute("cpt2", infosCompte);
+					request.getRequestDispatcher("jsp/Retrait.jsp").forward(request, response);
 				} else {
 					
 					response.sendRedirect("jsp/verifieRetrait.jsp");
@@ -81,11 +87,13 @@ public class Verifications extends HttpServlet {
 		///debut
 		if (path.equals("/verifieVirement")) {
 			try {
-				if (c.Verifie(compte)) {
-					
+				boolean verification = daoC.Verifie(username);
+				if (verification) {
 					HttpSession session3 = request.getSession();
-					 session3.setAttribute("sessionVirement",compte);
-					response.sendRedirect("jsp/Virement.jsp");
+					 String numCompte=compte.getNumCompte(); 
+					 Compte infosCompte=daoC.donnees(numCompte);
+					 session3.setAttribute("cpt3", infosCompte);
+					request.getRequestDispatcher("jsp/Virement.jsp").forward(request, response);
 				} else {
 					
 					response.sendRedirect("jsp/verifieVirement.jsp");

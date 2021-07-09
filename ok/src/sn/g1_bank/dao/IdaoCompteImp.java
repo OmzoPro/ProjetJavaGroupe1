@@ -119,17 +119,20 @@ public class IdaoCompteImp implements IdaoCompte {
 	
 	
 
-	public boolean Verifie(Compte c) throws ClassNotFoundException {
+	public boolean Verifie(String numCompte) throws ClassNotFoundException {
 		boolean status = false;
-		String sql = "select * from compte where numCompte = ?  ";
+		String sql = " select * from compte where numCompte = ?  ";
 		
 		try {
 			pst=con.prepareStatement(sql);
-			pst.setString(1, c.getNumCompte());
+			pst.setString(1, numCompte);
 			rs=pst.executeQuery();
-			status =rs.next();
-			
-			
+			if(rs.next()) {
+				String numeroCompte = rs.getString("numCompte");
+				if(numCompte.equals(numeroCompte)) {
+					status=true;
+				}
+			}
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -137,6 +140,30 @@ public class IdaoCompteImp implements IdaoCompte {
 		}
 		return status;
 
+		
+	}
+	
+	public Compte donnees(String numCompte) {
+		String sql = " select * from compte where numCompte = ?  ";
+		
+		Compte infosCompte = null;
+		try {
+			pst = con.prepareStatement(sql);
+			pst.setString(1, numCompte);
+			rs=pst.executeQuery();
+			while(rs.next()) {
+				int idCompte = rs.getInt("idCompte");
+				int solde = rs.getInt("solde");
+				int idClient = rs.getInt("idClient");
+				String typeCompte = rs.getString("typeCompte");
+			infosCompte = new Compte(idCompte, idClient, numCompte, solde, typeCompte);		
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return infosCompte;
 		
 	}
 

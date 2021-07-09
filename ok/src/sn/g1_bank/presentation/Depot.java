@@ -64,15 +64,18 @@ public class Depot extends HttpServlet {
 		Operation depot = new Operation(null, num_compte, toperation, montantOperation, soldeAvant, soldeApres, null, dateO, idAgent);
 		IdaoOperation dao = new IdaoOperationImp();
 		// insert vers la table compte
+		
 		Compte compte = new Compte(null, null, num_compte, soldeApres, null);
 		IdaoCompte dao1 = new IdaoCompteImp();
 		dao.save(depot);
-	//recuparation de la liste des operations
+		
+	  //recuparation de la liste des operations
 			ArrayList<Operation>listeOperation;
 			listeOperation=dao.liste();
 			request.setAttribute("operations", listeOperation);
 		
-			dao1.modifier(compte);;
+			dao1.modifier(compte);
+			
 		//recuparation de la liste des operations
 		ArrayList<Compte>listComptes;
 		listComptes=dao1.liste();

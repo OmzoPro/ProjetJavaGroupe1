@@ -4,37 +4,37 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel = "stylesheet" type = "text/css" href="assets/css/bootstrap.css">
+        <link rel = "stylesheet" type = "text/css" href="<%=request.getContextPath()%>/assets/css/bootstrap.css">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="assets/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/assets/css/bootstrap.min.css">
         <!-- Animate CSS -->
-        <link rel="stylesheet" href="assets/assets/css/animate.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/assets/css/animate.min.css">
         <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="assets/assets/css/meanmenu.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/assets/css/meanmenu.css">
         <!-- Boxicons CSS -->
-        <link rel="stylesheet" href="assets/css/boxicons.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/boxicons.min.css">
         <!-- Flaticon CSS -->
-        <link rel="stylesheet" href="assets/css/flaticon.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/flaticon.css">
         <!-- Nice Select CSS -->
-        <link rel="stylesheet" href="assets/css/nice-select.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/nice-select.min.css">
         <!-- Owl Carousel CSS -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl.carousel.min.css">
         <!-- Owl Carousel Default CSS -->
-        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/owl.theme.default.min.css">
         <!-- Odometer CSS -->
-        <link rel="stylesheet" href="assets/css/odometer.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/odometer.min.css">
         <!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/magnific-popup.min.css">
         <!-- Style CSS -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css">
         <!-- Responsive CSS -->
-		<link rel="stylesheet" href="assets/css/responsive.css">
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/responsive.css">
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<title>AaskanBi_Bank - Un conseil a l'écoute de vos besoins</title>
 
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="<%=request.getContextPath()%>/assets/img/favicon.png">
     </head>
 
     <body>
@@ -86,7 +86,7 @@
                   <div class="main-responsive-menu">
                       <div class="logo">
                           <a>
-                              <img src="assets/img/logo-3.png" alt="image">
+                              <img src="<%=request.getContextPath()%>/assets/img/logo-3.png" alt="image">
                           </a>
                       </div>
                   </div>
@@ -103,7 +103,7 @@
   <div class="container">
       <nav class="navbar navbar-expand-md navbar-light">
           <a class="navbar-brand" href="?p=accueil">
-              <img src="assets/img/logo-3.png" alt="image">
+              <img src="<%=request.getContextPath()%>/assets/img/logo-3.png" alt="image">
           </a>
 
          
@@ -184,7 +184,7 @@
 
                 <div class="col-lg-6">
                     <div class="../main-banner-image">
-                        <img src="assets/img/main-banner/banner-image-2.jpg" alt="image">
+                        <img src="<%=request.getContextPath()%>/assets/img/main-banner/banner-image-2.jpg" alt="image">
                     </div>
                 </div>
             </div>
@@ -193,10 +193,10 @@
 
     <div class="main-banner-shape">
         <div class="shape-1">
-            <img src="assets/img/main-banner/banner-shape-2.png" alt="image">
+            <img src="<%=request.getContextPath()%>/assets/img/main-banner/banner-shape-2.png" alt="image">
         </div>
         <div class="shape-2">
-            <img src="assets/img/main-banner/banner-shape-3.png" alt="image">
+            <img src="<%=request.getContextPath()%>/assets/img/main-banner/banner-shape-3.png" alt="image">
         </div>
         <div class="shape-3">
             <img src="assets/img/main-banner/banner-shape-4.png" alt="image">
