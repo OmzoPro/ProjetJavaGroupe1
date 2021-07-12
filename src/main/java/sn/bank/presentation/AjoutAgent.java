@@ -12,7 +12,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 @WebServlet("/ajoutAgent")
 public class AjoutAgent extends HttpServlet {
@@ -43,7 +42,7 @@ public class AjoutAgent extends HttpServlet {
         String adresse = request.getParameter("adresse");
         int telephone = Integer.parseInt(request.getParameter("telephone"));
         String naissance = request.getParameter("naissance");
-        Date dateCrea=new Date();
+        String dateCrea="12/12/2021";
         String sexe = request.getParameter("sexe");
         String email = request.getParameter("email");
         String grade = request.getParameter("grade");
@@ -52,7 +51,7 @@ public class AjoutAgent extends HttpServlet {
         String password = request.getParameter("password");
 
 
-        Agent agent = new Agent(idAgence, nom, prenom, adresse, telephone, naissance, (java.sql.Date) dateCrea, sexe, email, grade);
+        Agent agent = new Agent(idAgence, nom, prenom, adresse, telephone, naissance, dateCrea, sexe, email, grade);
         User user=new User(login,password,role);
         IdaoAgent dao= new DaoAgentImplement();
        

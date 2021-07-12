@@ -18,10 +18,24 @@ public class Client {
 	private String sexe;
 	private int idAgent;
 	
-	public Client() {
-		super ();
-	}
+
 	
+	public Client(int idClient, String nom, String prenom, String adresse, int telephone, String email,
+			String naissance, String dateCreation, Double cni, String sexe, int idAgent) {
+		super();
+		this.idClient = idClient;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.telephone = telephone;
+		this.email = email;
+		this.naissance = naissance;
+		this.dateCreation = dateCreation;
+		this.cni = cni;
+		this.sexe = sexe;
+		this.idAgent = idAgent;
+	}
+
 	public Client(String nom, String prenom, String adresse, int telephone, String email, String naissance,
 			String dateCreation, Double cni, String sexe, int idAgent) {
 		super();
@@ -77,6 +91,10 @@ public class Client {
 		this.cni = cni;
 		this.sexe = sexe;
 	}
+	public Client() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getIdClient() {
 		return idClient;
 	}

@@ -61,7 +61,7 @@
                 <ul class="top-header-others">
                     <li>
                         <i class='bx bxs-map'></i>
-                        <a href="#">M�dina, DAKAR-SENEGAL</a>
+                        <a href="#">Medina, DAKAR-SENEGAL</a>
                     </li>
 
                     <li class="languages-list">
@@ -102,10 +102,9 @@
 <div class="main-navbar">
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light">
-            <a href="accueil.jsp" class="navbar-brand">
+            <a href="" class="navbar-brand">
                 <img src="assets/img/logo-3.png" alt="image">
             </a>
-            <c:out value="${sessionScope['agentcon'].prenom }"></c:out>
             <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                 <ul class="navbar-nav">
 					<c:if test="${sessionScope['user'].role == 'agent' }">
@@ -128,19 +127,19 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Dep�t
+                                <a href="<%= request.getContextPath() %>/verifierDepot" class="nav-link">
+                                    Depot
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="<%= request.getContextPath() %>/verifierRetrait" class="nav-link">
                                     Retrait
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="<%= request.getContextPath() %>/verifierVirement" class="nav-link">
                                     Virement
                                 </a>
                             </li>

@@ -8,11 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sn.bank.dao.DaoAgenceImplement;
-import sn.bank.dao.DaoAgentImplement;
 import sn.bank.dao.IdaoAgence;
-import sn.bank.dao.IdaoAgent;
 import sn.bank.domaine.Agence;
-import sn.bank.domaine.Agent;
 
 /**
  * Servlet implementation class DetailAgence

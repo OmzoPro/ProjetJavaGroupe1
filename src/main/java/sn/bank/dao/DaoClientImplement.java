@@ -162,7 +162,36 @@ public class DaoClientImplement implements IdaoClient{
 	@Override
 	public Client SelectClientById(int idClient) {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = " select * from client where idClient = ?  ";
+		
+		
+		Client infosClient = null;
+		try {
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, idClient);
+			rs=pst.executeQuery();
+			while(rs.next()) {
+				int idAgent = rs.getInt("idAgent");
+				Double cni = rs.getDouble("cni");
+				int telephone = rs.getInt("telephone");
+				String nom = rs.getString("nom");
+				String prenom = rs.getString("prenom");
+				String adresse = rs.getString("adresse");
+				String naissance = rs.getString("naissance");
+				String email = rs.getString("email");
+				String sexe = rs.getString("sexe");
+				String dateCreation = rs.getString("dateCreation");
+				
+				infosClient = new Client(idClient, nom, prenom, adresse, telephone, email, naissance, dateCreation, cni, sexe, idAgent);		
+			
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return infosClient;
+				
 	}
 	@Override
 	public void ajoutClient(String nom, String prenom, String adresse, int telephone, String email, String naissance,

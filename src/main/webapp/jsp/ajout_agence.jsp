@@ -1,4 +1,4 @@
-<%@ include file="header2.jsp"%>
+<%@ include file="header.jsp"%>
 <!-- Start Open Account Banner -->
 <section class="open-account-area ptb-100">
     <div class="container">

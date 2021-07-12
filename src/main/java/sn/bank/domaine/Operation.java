@@ -35,6 +35,19 @@ public class Operation {
 		this.dateOperation = dateOperation;
 		this.idAgent = idAgent;
 	}
+
+	
+	public Operation(Double numCompte, String typeOperation, Double montantOperation, Double soldeAvant,
+			Double soldeApres, String dateOperation, int idAgent) {
+		super();
+		this.numCompte = numCompte;
+		this.typeOperation = typeOperation;
+		this.montantOperation = montantOperation;
+		this.soldeAvant = soldeAvant;
+		this.soldeApres = soldeApres;
+		this.dateOperation = dateOperation;
+		this.idAgent = idAgent;
+	}
 	public int getIdOperation() {
 		return idOperation;
 	}

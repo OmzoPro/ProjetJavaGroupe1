@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import sn.bank.dao.DaoUserImplement;
 import sn.bank.domaine.Agent;
 import sn.bank.domaine.Client;
+import sn.bank.domaine.Compte;
 import sn.bank.domaine.User;
 
 /**
@@ -57,7 +58,10 @@ public class login extends HttpServlet {
 			}else if(auth.getRole().equals("client")) {
 				int idClient=auth.getIdClient();
 				Client clientcon=daoUser.authentificationClient(idClient);
-				session.setAttribute("client", clientcon);
+				session.setAttribute("clientcon", clientcon);
+				
+				Compte comptecon=daoUser.authentificationCompte(idClient);
+				session.setAttribute("comptecon", comptecon);
 			}else {
 				
 			}

@@ -1,4 +1,4 @@
-<%@include file="header2.jsp"%>
+<%@include file="header.jsp"%>
 <!-- Start Main Banner Area -->
 <div class="main-banner">
     <div class="main-banner-item banner-item-three">
@@ -8,9 +8,9 @@
                     <div class="main-banner-content">
                         <h1>Rejoignez la banque Aaskanbi une banque mutualiste et responsable</h1>
                         <p>Votre transfert de compte est facilité, changement de vie ou de région, votre Banque Aaskanbi vous accompagne et facilite votre démarche. </p>
-                        <c:if test="${sessionScope['role'] == 'client' }">
+                        <c:if test="${(sessionScope['user'].role  == 'client' )}">
                         <div class="banner-btn">
-                        <a href="" class="default-btn">Consultez votre solde</a>
+                        <a href="<%= request.getContextPath() %>/solde" class="default-btn">Consultez votre solde</a>
                         </div>
                         </c:if>
                     </div>

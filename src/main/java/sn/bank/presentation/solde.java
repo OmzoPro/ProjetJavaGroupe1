@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class agent
+ * Servlet implementation class solde
  */
-@WebServlet("/agent")
-public class Agent extends HttpServlet {
+@WebServlet("/solde")
+public class solde extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Agent() {
+    public solde() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,8 @@ public class Agent extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("jsp/ajout_agent.jsp").forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("jsp/solde.jsp").forward(request, response);
 	}
 
 	/**

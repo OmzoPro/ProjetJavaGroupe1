@@ -6,10 +6,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.Connection;
-import java.sql.Date;
-
 import sn.bank.domaine.Agent;
 import sn.bank.domaine.Client;
+import sn.bank.domaine.Compte;
 import sn.bank.domaine.User;
 import sn.bank.utilis.Connexion;
 
@@ -142,7 +141,7 @@ public class DaoUserImplement implements IdaoUser{
 			String adresseAgent = rs.getString("adresse");
 			int telephoneAgent=rs.getInt("telephone");
 			String naissanceAgent=rs.getString("naissance");
-			Date dateCreaAgent = rs.getDate("dateCrea");
+			String dateCreaAgent = rs.getString("dateCrea");
 			String sexeAgent = rs.getString("sexe");
 			String emailAgent = rs.getString("email");
 			String gradeAgent = rs.getString("grade");			 
@@ -161,7 +160,8 @@ public class DaoUserImplement implements IdaoUser{
 	@Override
 	public Client authentificationClient(int idClient) {
 		// TODO Auto-generated method stub
-		String sql = "SELECT * FROM client WHERE idAgent=?";
+		String sql = "SELECT * FROM client WHERE idClient=?";
+		
 		Client clientCon=null;
 		try {	
 			pst = con.prepareStatement(sql);
@@ -187,6 +187,32 @@ public class DaoUserImplement implements IdaoUser{
 			e.printStackTrace();
 		}
 		return clientCon;
+	}
+	
+	@Override
+	public Compte authentificationCompte(int idClient) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM compte WHERE idClient=?";
+		
+		Compte compteCon=null;
+		try {	
+			pst = con.prepareStatement(sql);
+			pst.setInt(1, idClient);
+			rs = pst.executeQuery();
+		while(rs.next()) {
+			Double numCompte = rs.getDouble("numCompte");
+			Double solde = rs.getDouble("solde");
+			String typeCompte = rs.getString("typeCompte");		 
+			    
+			compteCon = new Compte( numCompte, solde, typeCompte);
+			
+		}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return compteCon;
 	}
 
 

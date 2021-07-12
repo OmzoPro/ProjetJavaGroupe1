@@ -1,7 +1,5 @@
 package sn.bank.domaine;
 
-import java.util.Date;
-
 public class Agent {
 	private Agence agence=new Agence();
 	
